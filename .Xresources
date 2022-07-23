@@ -1,0 +1,24 @@
+
+URxvt.internalBorder: 40
+URxvt.depth: 32
+
+URxvt*background: Black
+URxvt*foreground: White
+URxvt*geometry: 80x30
+URxvt*scrollBar: false
+
+!-- Xft settings -- !
+Xft.dpi:        192
+Xft.antialias:  true
+Xft.rgba:       none
+Xft.hinting:    true
+Xft.hintstyle:  hintfull
+Xft.lcdfilter:  lcddefault
+
+! -- Fonts -- !
+URxvt.font:xft:FantasqueSansMono:size=12
+URxvt.boldfont:xft:FantasqueSansMono:style=Bold:size=12
+URxvt.italicfont:xft:FantasqueSansMono:style=Italic:size=12
+URxvt.letterSpace: 1
+URxvt.lineSpace: 2
+URxvt.skipBuiltinGlyphs: true
