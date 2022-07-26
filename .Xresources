@@ -1,4 +1,6 @@
 
+*.dpi: 192
+
 URxvt.internalBorder: 40
 URxvt.depth: 32
 
@@ -22,3 +24,5 @@ URxvt.italicfont:xft:FantasqueSansMono:style=Italic:size=12
 URxvt.letterSpace: 1
 URxvt.lineSpace: 2
 URxvt.skipBuiltinGlyphs: true
+
+rofi.dpi: 192
