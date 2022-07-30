@@ -12,8 +12,8 @@
 wal -R
 picom &  # compositor
 ~/.fehbg &  # wallpaper
-nm-applet &  # network manager
-pasystray &  # audio manager
+#nm-applet &  # network manager
+#pasystray &  # audio manager
 dunst &  # notification manager
 tint2 &  # taskbar
 #/usr/lib/geoclue-2.0/demos/agent &  # location service

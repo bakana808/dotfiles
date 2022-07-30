@@ -1,5 +1,5 @@
 
-*.dpi: 192
+!*.dpi: 192
 
 URxvt.internalBorder: 40
 URxvt.depth: 32
@@ -10,7 +10,7 @@ URxvt*geometry: 80x30
 URxvt*scrollBar: false
 
 !-- Xft settings -- !
-Xft.dpi:        192
+!Xft.dpi:        96
 Xft.antialias:  true
 Xft.rgba:       none
 Xft.hinting:    true
@@ -24,5 +24,3 @@ URxvt.italicfont:xft:FantasqueSansMono:style=Italic:size=12
 URxvt.letterSpace: 1
 URxvt.lineSpace: 2
 URxvt.skipBuiltinGlyphs: true
-
-rofi.dpi: 192
