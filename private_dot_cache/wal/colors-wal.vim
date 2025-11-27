@@ -1,0 +1,23 @@
+" Special
+let wallpaper  = "/home/octopod/.cache/quickshell/user/generated/wallpaper"
+let background = "#06061a"
+let foreground = "#c1c1c5"
+let cursor     = "#c1c1c5"
+
+" Colors
+let color0  = "#06061a"
+let color1  = "#c4705d"
+let color2  = "#b25a73"
+let color3  = "#5fab62"
+let color4  = "#51a0b4"
+let color5  = "#b29d60"
+let color6  = "#b78067"
+let color7  = "#8d8d98"
+let color8  = "#454580"
+let color9  = "#f6a18d"
+let color10 = "#dc8ba2"
+let color11 = "#90d494"
+let color12 = "#7ecce0"
+let color13 = "#ddc992"
+let color14 = "#e3b29c"
+let color15 = "#c1c1c5"

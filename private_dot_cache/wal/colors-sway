@@ -1,0 +1,21 @@
+set $wallpaper /home/octopod/.cache/quickshell/user/generated/wallpaper
+
+set $background #06061a
+set $foreground #c1c1c5
+
+set $color0 #06061a
+set $color1 #c4705d
+set $color2 #b25a73
+set $color3 #5fab62
+set $color4 #51a0b4
+set $color5 #b29d60
+set $color6 #b78067
+set $color7 #8d8d98
+set $color8 #454580
+set $color9 #f6a18d
+set $color10 #dc8ba2
+set $color11 #90d494
+set $color12 #7ecce0
+set $color13 #ddc992
+set $color14 #e3b29c
+set $color15 #c1c1c5

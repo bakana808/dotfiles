@@ -1,0 +1,28 @@
+{
+    "checksum": "4d7aa97cd745abc7c5a82211282a69fc",
+    "wallpaper": "/home/octopod/.cache/quickshell/user/generated/wallpaper",
+    "alpha": "100",
+    "special": {
+        "background": "#0e1a46",
+        "foreground": "#c8c8cb",
+        "cursor": "#c8c8cb"
+    },
+    "colors": {
+        "color0": "#0e1a46",
+        "color1": "#ff6b95",
+        "color2": "#ff6c95",
+        "color3": "#38a2ff",
+        "color4": "#f96ac0",
+        "color5": "#37b1db",
+        "color6": "#3da7e7",
+        "color7": "#9c9ea6",
+        "color8": "#8796ff",
+        "color9": "#f997b2",
+        "color10": "#f99db6",
+        "color11": "#88c6f8",
+        "color12": "#faa5d8",
+        "color13": "#97e0f9",
+        "color14": "#a2d8fa",
+        "color15": "#c8c8cb"
+    }
+}
