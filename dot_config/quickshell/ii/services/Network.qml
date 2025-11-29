@@ -40,11 +40,13 @@ Singleton {
             return "lan";
         if (wifiEnabled) {
             if (!wifi)
-                return wifiNetworks.length ? "perm_scan_wifi" : "signal_wifi_off";
+                return "wifi_off";
+            else if (networkStrength === -1)
+                return "android_wifi_3_bar_question";
             else
-                return networkStrength > 80 ? "signal_wifi_4_bar" : networkStrength > 60 ? "network_wifi_3_bar" : networkStrength > 40 ? "network_wifi_2_bar" : networkStrength > 20 ? "network_wifi_1_bar" : networkStrength === -1 ? "signal_wifi_statusbar_not_connected" : "signal_wifi_0_bar";
+                return networkStrength > 80 ? "android_wifi_3_bar" : networkStrength > 50 ? "wifi_2_bar" : "wifi_1_bar";
         }
-        return "signal_wifi_off";
+        return "wifi_off";
     }
 
     // Control

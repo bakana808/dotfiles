@@ -10,12 +10,13 @@ StyledText {
         hintingPreference: Font.PreferFullHinting
         family: Appearance?.font.family.iconMaterial ?? "Material Symbols Rounded"
         pixelSize: iconSize
-        weight: Font.Normal + (Font.DemiBold - Font.Normal) * fill
-        variableAxes: { 
-            "FILL": truncatedFill,
+        // weight: Font.Normal + (Font.DemiBold - Font.Normal) * fill
+        styleName: "Bold"
+        variableAxes: {
+            "FILL": 1,
             // "wght": font.weight,
             // "GRAD": 0,
-            "opsz": iconSize,
+            "opsz": 40
         }
     }
 

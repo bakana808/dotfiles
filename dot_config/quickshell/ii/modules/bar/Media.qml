@@ -11,7 +11,7 @@ import Quickshell.Hyprland
 
 Item {
     id: root
-    property real iconSize: 20
+    property real iconSize: Appearance.sizes.icon
     property real textSize: Appearance.font.pixelSize.normal
 
     property string iconColor: ColorPalette.c1
@@ -27,7 +27,6 @@ Item {
 
     Layout.fillHeight: true
     implicitWidth: rowLayout.implicitWidth
-    implicitHeight: Appearance.sizes.barHeight
 
     Timer {
         running: activePlayer?.playbackState == MprisPlaybackState.Playing
@@ -56,7 +55,7 @@ Item {
         id: rowLayout
 
         spacing: root.barSpacing
-        anchors.fill: parent
+        height: root.height
 
         // ClippedFilledCircularProgress {
         //     id: mediaCircProg

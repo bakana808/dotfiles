@@ -5,6 +5,9 @@ import qs.modules.common
 import QtQuick
 import QtQuick.Layouts
 
+import Quickshell
+import Quickshell.Widgets
+
 MouseArea {
     id: root
 
@@ -24,8 +27,9 @@ MouseArea {
             iconSize: root.iconSize
             color: root.color
 
-            text: "device_thermostat"
+            text: "thermometer"
         }
+
         StyledText {
             verticalAlignment: Text.AlignVCenter
             text: ResourceUsage.cpuTemp !== null ? `${ResourceUsage.cpuTemp}°C` : "N/A"

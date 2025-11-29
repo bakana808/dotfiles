@@ -10,6 +10,9 @@ MouseArea {
 
     readonly property real useShortenedForm: (Appearance.sizes.barHellaShortenScreenWidthThreshold >= screen?.width) ? 2 : (Appearance.sizes.barShortenScreenWidthThreshold >= screen?.width) ? 1 : 0
 
+    // if true, animate the battery icon when charging
+    readonly property bool animatedCharging: true
+
     readonly property var chargeState: Battery.chargeState
     readonly property bool isCharging: Battery.isCharging
     readonly property bool isPluggedIn: Battery.isPluggedIn
@@ -17,6 +20,7 @@ MouseArea {
     readonly property bool isLow: percentage <= Config.options.battery.low / 100
 
     property color iconColor: ColorPalette.c2
+    property color bgColor: ColorPalette.bg
 
     property bool borderless: Config.options.bar.borderless
     property int iconSize: 20
@@ -25,10 +29,28 @@ MouseArea {
 
     visible: (root.useShortenedForm < 2 && UPower.displayDevice.isLaptopBattery)
     hoverEnabled: true
-    // implicitWidth: batteryProgress.implicitWidth
+
     Layout.fillHeight: true
+
     height: layout.implicitHeight
     width: layout.implicitWidth
+
+    Timer {
+        id: chargeIconTimer
+        property int frame: 0
+        interval: 500
+        running: root.animatedCharging && root.chargeState == UPowerDeviceState.Charging
+        repeat: true
+        onTriggered: frame = (frame + 1) % 8
+        property string icon: {
+            switch (frame) {
+            case 7:
+                return "battery_full";
+            default:
+                return "battery_%1_bar".arg(frame);
+            }
+        }
+    }
 
     RowLayout {
         id: layout
@@ -36,33 +58,28 @@ MouseArea {
         spacing: root.barSpacing - 2
         height: root.height
 
-        Revealer {
-            reveal: root.isPluggedIn
-            Layout.leftMargin: -2
-
-            MaterialSymbol {
-                color: root.iconColor
-                verticalAlignment: Text.AlignVCenter
-                horizontalAlignment: Text.AlignLeft
-                fill: 1
-                text: "bolt"
-                iconSize: root.iconSize - 10
-            }
-        }
-
         MaterialSymbol {
             id: batteryIcon
 
             Layout.fillHeight: true
             Layout.alignment: Qt.AlignVCenter
+            Layout.leftMargin: -6
+
             iconSize: root.iconSize
             color: root.iconColor
 
             text: {
                 switch (root.chargeState) {
+                case UPowerDeviceState.Unknown:
+                    return "battery_unknown";
+                case UPowerDeviceState.Empty:
+                    return "battery_0_bar";
                 case UPowerDeviceState.FullyCharged:
                 case UPowerDeviceState.PendingCharge:
                     return "battery_full";
+                case UPowerDeviceState.Charging:
+                    if (root.animatedCharging)
+                        return chargeIconTimer.icon;
                 default:
                     if (root.percentage >= 0.95)
                         return "battery_full";
@@ -86,6 +103,32 @@ MouseArea {
                         return "battery_1_bar";
 
                     return "battery_alert";
+                }
+            }
+
+            Revealer {
+                id: chargeIcon
+                reveal: root.isPluggedIn
+
+                anchors.bottom: batteryIcon.bottom
+                anchors.right: batteryIcon.right
+                anchors.bottomMargin: 5
+                anchors.rightMargin: 1
+
+                readonly property real size: root.iconSize - 10
+
+                Rectangle {
+                    width: parent.size
+                    height: parent.size
+                    color: root.bgColor
+                    radius: parent.size
+
+                    MaterialSymbol {
+                        anchors.centerIn: parent
+                        color: root.iconColor
+                        text: "bolt"
+                        iconSize: chargeIcon.size - 2
+                    }
                 }
             }
         }
