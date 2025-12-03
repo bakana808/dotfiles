@@ -252,8 +252,8 @@ Item {
                     property var biggestWindow: HyprlandData.biggestWindowForWorkspace(button.workspaceValue)
                     property var mainAppIconSource: Quickshell.iconPath(AppSearch.guessIcon(biggestWindow?.class), "image-missing")
 
+                    // Workspace number text
                     StyledText {
-                        // Workspace number text
                         opacity: (root.showNumbers || isWorkspaceActive(workspaceValue) || (root.showNumbers && (!root.showAppIcons || !workspaceButtonBackground.biggestWindow)) ? 1 : 0)
                         z: 3
 
