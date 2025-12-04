@@ -449,6 +449,13 @@ return {
         },
         copilot = {},
         jedi_language_server = {},
+        rust_analyzer = {
+          settings = {
+            on_attach = function(client, bufnr)
+              vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+            end,
+          },
+        },
       }
 
       vim.lsp.enable 'gdscript'
@@ -898,6 +905,20 @@ return {
           require('sidekick.cli').toggle { name = 'claude', focus = true }
         end,
         desc = 'Sidekick Toggle Claude',
+      },
+    },
+  },
+  { -- task runner / manager
+    'stevearc/overseer.nvim',
+    ---@module 'overseer'
+    ---@type overseer.SetupOpts
+    opts = {},
+    keys = {
+      {
+        '<leader>z',
+        '<cmd>OverseerRun<cr><cmd>OverseerOpen!<cr>',
+        mode = { 'n' },
+        desc = 'Run Task',
       },
     },
   },
