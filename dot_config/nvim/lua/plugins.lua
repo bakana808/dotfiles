@@ -1,11 +1,3 @@
----@param mode any
----@param lhs any
----@param rhs any
----@param opts any
-local function map(mode, lhs, rhs, opts)
-  vim.keymap.set(mode, lhs, rhs, opts)
-end
-
 return {
   { -- Detect tabstop and shiftwidth automatically
     'NMAC427/guess-indent.nvim',
