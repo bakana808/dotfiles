@@ -442,11 +442,12 @@ return {
         copilot = {},
         jedi_language_server = {},
         rust_analyzer = {
-          settings = {
-            on_attach = function(client, bufnr)
+          settings = {},
+          on_attach = function(client, bufnr)
+            if client.name == 'rust_analyzer' then
               vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
-            end,
-          },
+            end
+          end,
         },
       }
 
