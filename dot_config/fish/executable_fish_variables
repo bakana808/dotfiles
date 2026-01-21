@@ -11,4 +11,5 @@ SETUVAR _fisher_catppuccin_2F_fish_files:\x7e/\x2econfig/fish/themes/Catppuccin\
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish
 SETUVAR _fisher_plugins:jorgebucaran/fisher\x1ecatppuccin/fish
 SETUVAR _fisher_upgraded_to_4_4:\x1d
+SETUVAR fish_key_bindings:fish_default_key_bindings
 SETUVAR fish_user_paths:/home/octopod/\x2elocal/share/emsdk/upstream/emscripten\x1e/home/octopod/\x2elocal/share/emsdk\x1e/home/octopod/\x2elocal/bin\x1e/home/octopod/bin\x1e/home/octopod/\x2ecargo/bin
