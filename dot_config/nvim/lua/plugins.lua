@@ -440,6 +440,8 @@ return {
           cmd = { 'qmlls', '-E' },
         },
         copilot = {},
+        gdtoolkit = {},
+        ['gdscript-formatter'] = {},
         jedi_language_server = {},
         rust_analyzer = {
           settings = {},
@@ -456,6 +458,7 @@ return {
       -- - Interface > Editor > Import Resources When Unfocused: On
       -- - Text Editor > Behavior > Files > Auto Reload Scripts on External Change: On
       vim.lsp.enable 'gdscript'
+      vim.lsp.enable 'gdshader_lsp'
 
       -- Ensure the servers and tools above are installed
       --
