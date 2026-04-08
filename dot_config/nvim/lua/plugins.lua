@@ -440,7 +440,7 @@ return {
           cmd = { 'qmlls', '-E' },
         },
         copilot = {},
-        gdtoolkit = {},
+        -- gdtoolkit = {},
         ['gdscript-formatter'] = {},
         jedi_language_server = {},
         rust_analyzer = {
@@ -528,7 +528,7 @@ return {
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
-        gdscript = { 'gdformat' },
+        gdscript = { 'gdscript-formatter' },
         -- qml = { 'qmlformat' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
