@@ -1,15 +1,14 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR EDITOR:nvim
-SETUVAR GDK_SCALE:2
-SETUVAR QT_QPA_PLATFORMTHEME:qt6ct
-SETUVAR SDL_AUDIODRIVER:pipewire
-SETUVAR STEAM_FORCE_DESKTOPUI_SCALING:2\x2e0
+SETUVAR --export GDK_SCALE:2
+SETUVAR --export QT_QPA_PLATFORMTHEME:qt6ct
+SETUVAR --export SDL_AUDIODRIVER:pipewire
+SETUVAR --export STEAM_FORCE_DESKTOPUI_SCALING:2\x2e0
 SETUVAR --export SUDO_EDITOR:/usr/bin/nvim
+SETUVAR --export VISUAL:nvim
 SETUVAR __fish_initialized:4300
 SETUVAR _fisher_catppuccin_2F_fish_files:\x7e/\x2econfig/fish/themes/Catppuccin\x20Frappe\x2etheme\x1e\x7e/\x2econfig/fish/themes/Catppuccin\x20Latte\x2etheme\x1e\x7e/\x2econfig/fish/themes/Catppuccin\x20Macchiato\x2etheme\x1e\x7e/\x2econfig/fish/themes/Catppuccin\x20Mocha\x2etheme
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish
 SETUVAR _fisher_plugins:jorgebucaran/fisher\x1ecatppuccin/fish
 SETUVAR _fisher_upgraded_to_4_4:\x1d
-SETUVAR fish_key_bindings:fish_default_key_bindings
 SETUVAR fish_user_paths:/home/octopod/\x2elocal/share/emsdk/upstream/emscripten\x1e/home/octopod/\x2elocal/share/emsdk\x1e/home/octopod/\x2elocal/bin\x1e/home/octopod/bin\x1e/home/octopod/\x2ecargo/bin

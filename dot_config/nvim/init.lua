@@ -86,65 +86,6 @@ vim.o.confirm = true
 vim.o.winblend = 0
 vim.o.winborder = 'rounded'
 
--- [[ Basic Keymaps ]]
---  See `:help vim.keymap.set()`
-
----@param lhs string
----@param rhs string|function
----@param mode string?
----@param opts any
-local function keymap(lhs, rhs, mode, opts)
-  mode = mode or 'n'
-  opts = opts or {}
-  vim.keymap.set(mode, lhs, rhs, opts)
-end
-
--- Toggle show hover information
-keymap('<C-Space>', vim.lsp.buf.hover)
-
--- Toggle comments (normal/visual)
-keymap('<C-/>', ':normal gcc<CR>')
-keymap('<C-/>', '<ESC>:normal gvgc<CR>:normal gv<CR>', 'v')
-
--- Clear highlights on search when pressing <Esc> in normal mode
---  See `:help hlsearch`
-keymap('<Esc>', '<cmd>nohlsearch<CR>', 'n')
-
--- Buffer keymaps
-keymap('<leader>c', ':bp|sp|bn|bd<CR>', 'n', { desc = 'Close current buffer' })
-
--- Diagnostic keymaps
-keymap('<leader>q', vim.diagnostic.setloclist, 'n', { desc = 'Open diagnostic [Q]uickfix list' })
-
--- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
--- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
--- is not what someone will guess without a bit more experience.
---
--- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
--- or just use <C-\><C-n> to exit terminal mode
-keymap('<Esc><Esc>', '<C-\\><C-n>', 't', { desc = 'Exit terminal mode' })
-
--- TIP: Disable arrow keys in normal mode
--- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
--- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
--- vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
--- vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
-
--- Keybinds to make split navigation easier.
---  Use CTRL+<hjkl> to switch between windows
---
---  See `:help wincmd` for a list of all window commands
-keymap('<C-h>', '<C-w><C-h>', 'n', { desc = 'Move focus to the left window' })
-keymap('<C-l>', '<C-w><C-l>', 'n', { desc = 'Move focus to the right window' })
-keymap('<C-j>', '<C-w><C-j>', 'n', { desc = 'Move focus to the lower window' })
-keymap('<C-k>', '<C-w><C-k>', 'n', { desc = 'Move focus to the upper window' })
-
--- NOTE: Some terminals have colliding keymaps or are not able to send distinct keycodes
--- vim.keymap.set("n", "<C-S-h>", "<C-w>H", { desc = "Move window to the left" })
--- vim.keymap.set("n", "<C-S-l>", "<C-w>L", { desc = "Move window to the right" })
--- vim.keymap.set("n", "<C-S-j>", "<C-w>J", { desc = "Move window to the lower" })
--- vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
-
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -197,6 +138,74 @@ require('lazy').setup(require 'plugins', {
     },
   },
 })
+
+-- [[ Basic Keymaps ]]
+--  See `:help vim.keymap.set()`
+
+---@param lhs string
+---@param rhs string|function
+---@param mode string?
+---@param opts any
+local function keymap(lhs, rhs, mode, opts)
+  mode = mode or 'n'
+  opts = opts or {}
+  vim.keymap.set(mode, lhs, rhs, opts)
+end
+
+---@param lhs string
+---@param desc string
+local function keygroup(lhs, desc)
+  local wk = require 'which-key'
+  wk.add { { lhs, group = desc } }
+end
+
+-- Toggle show hover information
+keymap('<C-Space>', vim.lsp.buf.hover)
+
+-- Toggle comments (normal/visual)
+keymap('<C-/>', ':normal gcc<CR>')
+keymap('<C-/>', '<ESC>:normal gvgc<CR>:normal gv<CR>', 'v')
+
+-- Clear highlights on search when pressing <Esc> in normal mode
+--  See `:help hlsearch`
+keymap('<Esc>', '<cmd>nohlsearch<CR>', 'n')
+
+-- Buffer keymaps
+keymap('<leader>c', ':bp|sp|bn|bd<CR>', 'n', { desc = 'Close current buffer' })
+
+-- Diagnostic keymaps
+keygroup('<leader>q', 'Open [Q]uickfix List...')
+keymap('<leader>qq', vim.diagnostic.setloclist, 'n', { desc = 'Open diagnostic [Q]uickfix list' })
+keymap('<leader>qt', ':TodoQuickFix<CR>', 'n', { desc = 'Open [T]ODO list' })
+
+-- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
+-- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
+-- is not what someone will guess without a bit more experience.
+--
+-- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
+-- or just use <C-\><C-n> to exit terminal mode
+keymap('<Esc><Esc>', '<C-\\><C-n>', 't', { desc = 'Exit terminal mode' })
+
+-- TIP: Disable arrow keys in normal mode
+-- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
+-- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
+-- vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
+-- vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
+
+-- Keybinds to make split navigation easier.
+--  Use CTRL+<hjkl> to switch between windows
+--
+--  See `:help wincmd` for a list of all window commands
+keymap('<C-h>', '<C-w><C-h>', 'n', { desc = 'Move focus to the left window' })
+keymap('<C-l>', '<C-w><C-l>', 'n', { desc = 'Move focus to the right window' })
+keymap('<C-j>', '<C-w><C-j>', 'n', { desc = 'Move focus to the lower window' })
+keymap('<C-k>', '<C-w><C-k>', 'n', { desc = 'Move focus to the upper window' })
+
+-- NOTE: Some terminals have colliding keymaps or are not able to send distinct keycodes
+-- vim.keymap.set("n", "<C-S-h>", "<C-w>H", { desc = "Move window to the left" })
+-- vim.keymap.set("n", "<C-S-l>", "<C-w>L", { desc = "Move window to the right" })
+-- vim.keymap.set("n", "<C-S-j>", "<C-w>J", { desc = "Move window to the lower" })
+-- vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
 
 local pipepath = '/tmp/godot.pipe'
 if not vim.loop.fs_stat(pipepath) then
