@@ -1,9 +1,9 @@
 static const char norm_fg[] = "#c1c1c5";
-static const char norm_bg[] = "#06061a";
-static const char norm_border[] = "#454580";
+static const char norm_bg[] = "#0a0a17";
+static const char norm_border[] = "#59596d";
 
 static const char sel_fg[] = "#c1c1c5";
-static const char sel_bg[] = "#c4705d";
+static const char sel_bg[] = "#eaa99a";
 static const char sel_border[] = "#c1c1c5";
 
 static const char *colors[][3]      = {

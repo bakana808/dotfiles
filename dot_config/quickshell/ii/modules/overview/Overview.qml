@@ -27,7 +27,7 @@ Scope {
 
             WlrLayershell.namespace: "quickshell:overview"
             WlrLayershell.layer: WlrLayer.Overlay
-            // WlrLayershell.keyboardFocus: GlobalStates.overviewOpen ? WlrKeyboardFocus.OnDemand : WlrKeyboardFocus.None
+            WlrLayershell.keyboardFocus: GlobalStates.overviewOpen ? WlrKeyboardFocus.OnDemand : WlrKeyboardFocus.None
             color: "transparent"
 
             mask: Region {
@@ -40,8 +40,8 @@ Scope {
             anchors {
                 top: true
                 bottom: true
-                left: !(Config?.options.overview.enable ?? true) 
-                right: !(Config?.options.overview.enable ?? true) 
+                left: !(Config?.options.overview.enable ?? true)
+                right: !(Config?.options.overview.enable ?? true)
             }
 
             HyprlandFocusGrab {
@@ -189,6 +189,7 @@ Scope {
             GlobalStates.overviewOpen = !GlobalStates.overviewOpen;
         }
     }
+
     GlobalShortcut {
         name: "overviewClose"
         description: "Closes overview"

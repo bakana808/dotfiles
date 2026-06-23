@@ -1,53 +1,53 @@
 [Background]
-Color=6,6,26
+Color=10,10,23
 
 [BackgroundIntense]
-Color=6,6,26
+Color=10,10,23
 
 [Color0]
-Color=6,6,26
+Color=10,10,23
 
 [Color0Intense]
-Color=69,69,128
+Color=89,89,109
 
 [Color1]
-Color=196,112,93
+Color=234,169,154
 
 [Color1Intense]
-Color=246,161,141
+Color=234,169,154
 
 [Color2]
-Color=178,90,115
+Color=142,195,208
 
 [Color2Intense]
-Color=220,139,162
+Color=142,195,208
 
 [Color3]
-Color=95,171,98
+Color=215,183,169
 
 [Color3Intense]
-Color=144,212,148
+Color=215,183,169
 
 [Color4]
-Color=81,160,180
+Color=160,197,162
 
 [Color4Intense]
-Color=126,204,224
+Color=160,197,162
 
 [Color5]
-Color=178,157,96
+Color=207,195,161
 
 [Color5Intense]
-Color=221,201,146
+Color=207,195,161
 
 [Color6]
-Color=183,128,103
+Color=206,154,169
 
 [Color6Intense]
-Color=227,178,156
+Color=206,154,169
 
 [Color7]
-Color=141,141,152
+Color=193,193,197
 
 [Color7Intense]
 Color=193,193,197
