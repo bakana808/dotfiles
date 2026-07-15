@@ -830,7 +830,8 @@ return {
       }
     end,
     keys = {
-      { '<leader>e', ':e %:h<cr>', mode = 'n', desc = 'Open File [E]xplorer (oil.nvim)' },
+      -- { '<leader>e', ':Oil --float .<CR>', mode = 'n', desc = 'Open File [E]xplorer (oil.nvim)' },
+      { '<leader>e', ':Oil --float<CR>', mode = 'n', desc = 'Open File [E]xplorer (oil.nvim)' },
     },
   },
   -- session management
@@ -888,6 +889,17 @@ return {
     ---@type AutoSession.Config
     opts = {},
   },
+  -- {
+  --   'jedrzejboczar/possession.nvim',
+  --   opts = {
+  --     autosave = {
+  --       cwd = function()
+  --         return not require('possession.session').exists(require('possession.paths').cwd_session_name())
+  --       end,
+  --     },
+  --     autoload = 'auto_cwd',
+  --   },
+  -- },
   {
     'Makaze/watch.nvim',
     cmd = { 'WatchStart', 'WatchStop', 'WatchFile' },

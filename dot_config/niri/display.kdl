@@ -21,13 +21,13 @@ window-rule {
 window-rule {
     match app-id=r#"kitty$"#
 
-    opacity 0.9
+    opacity 0.95
 
     background-effect {
         xray false
         blur true
-        noise 0.05
-        saturation 3
+        noise 0.2
+        saturation 1
     }
 }
 

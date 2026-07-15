@@ -86,6 +86,8 @@ vim.o.confirm = true
 vim.o.winblend = 0
 vim.o.winborder = 'rounded'
 
+vim.o.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions'
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
