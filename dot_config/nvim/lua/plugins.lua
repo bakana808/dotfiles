@@ -887,7 +887,14 @@ return {
 
     ---@module 'auto-session'
     ---@type AutoSession.Config
-    opts = {},
+    opts = {
+      pre_save_cmds = {
+        'OverseerClose',
+        function(_)
+          return true
+        end,
+      },
+    },
   },
   -- {
   --   'jedrzejboczar/possession.nvim',

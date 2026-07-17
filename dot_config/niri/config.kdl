@@ -9,14 +9,21 @@ include "layout.kdl"
 include "display.kdl"
 include "keybinds.kdl"
 
-// spawn-at-startup "qs" "-c" "ii"
 spawn-at-startup "noctalia"
+// needed to support typing in other languages
+spawn-at-startup "fcitx5" "-d"
+
+// spawn-at-startup "dbus-update-activation-environment" "--systemd" "--all"
+// spawn-at-startup "qs" "-c" "ii"
 // spawn-at-startup "/usr/lib/geoclue-2.0/demos/agent"
 // spawn-at-startup "hypridle"
-spawn-at-startup "fcitx5"
-spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-spawn-at-startup "dbus-update-activation-environment" "--systemd" "--all"
+// spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 // spawn-at-startup "hyprlock"
+
+cursor {
+  xcursor-theme "Bibata-Modern-Classic"
+  xcursor-size 24
+}
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
